@@ -1,0 +1,20 @@
+button{
+    background: transparent;
+    border: none;
+    outline: none;
+
+}
+div.center{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    
+}
+p{
+    font-size: x-large;
+}
+img.img-refresh{
+    height: 25px;
+    width: 25px;
+}

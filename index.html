@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<head>
+<title>Jokeypo</title>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="index.js"></script>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+   <div class="center"> <img id="botHand" src=""></div>
+   <br>
+    <h1 id="title">Pedra, papel ou tesoura?</h1>
+    <div class="center">
+    <button id="pedra"><img  src="image/pedra.png"></button>
+    <button id="papel"><img src="image/papel.png"></button>
+    <button id="tesoura"><img src="image/tesoura.png"></button>
+    </div>
+    <div class="center">
+    <h2 id="presultado"></h2>
+    <button id="refresh"><img class="img-refresh" src="image/refresh.png"></button>
+    </div>
+    
+    
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#botHand").hide();
+        $("#refresh").hide();
+        $("#pedra").click(function(){
+            $("#papel").hide();
+            $("#tesoura").hide();
+            printResult(retornaResultado('pedra'));
+        })
+        $("#papel").click(function(){
+            $("#pedra").hide();
+            $("#tesoura").hide();
+            printResult(retornaResultado('papel'));
+        })
+        $("#tesoura").click(function(){
+            $("#papel").hide();
+            $("#pedra").hide();
+            printResult(retornaResultado('tesoura'));
+        })
+
+       function printResult(resultado){
+            $("#title").hide();
+            if (resultado[1]=="pedra"){
+                $('#botHand').attr("src", "image/inpedra.png");
+
+            }
+            else if(resultado[1]=="papel"){
+                $('#botHand').attr("src", "image/inpapel.png");
+
+            }
+            else if(resultado[1]=="tesoura"){
+                $('#botHand').attr("src", "image/intesoura.png");
+            }
+            $("#botHand").show();
+            $("#refresh").show();
+           if (resultado[0]=="você perdeu"){
+            $("#presultado").text(resultado[0]).css("color", "red");
+            
+           }
+           else if(resultado[0]=="você ganhou"){
+            $("#presultado").text(resultado[0]).css("color", "green");
+            
+           }
+           else if(resultado[0]=="empate"){
+            $("#presultado").text(resultado[0]).css("color", "yellow");
+            
+           }
+           $("#presultado").show();
+       }
+    
+       $("#refresh").click(function(){
+        $("#refresh").hide();
+        $("#botHand").hide();
+        $("#pedra").show();
+        $("#papel").show();
+        $("#tesoura").show();
+        $("#title").show();
+        $("#presultado").hide();
+       });
+        
+    })
+</script>
+</body>
