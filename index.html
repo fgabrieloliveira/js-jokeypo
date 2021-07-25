@@ -53,8 +53,7 @@
             else if(resultado[1]=="tesoura"){
                 $('#botHand').attr("src", "image/intesoura.png");
             }
-            $("#botHand").show();
-            $("#refresh").show();
+            
            if (resultado[0]=="você perdeu"){
             $("#presultado").text(resultado[0]).css("color", "red");
             
@@ -68,6 +67,8 @@
             
            }
            $("#presultado").show();
+           $("#botHand").show();
+           $("#refresh").show();
        }
     
        $("#refresh").click(function(){
