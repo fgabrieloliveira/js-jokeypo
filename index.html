@@ -73,12 +73,13 @@
     
        $("#refresh").click(function(){
         $("#refresh").hide();
-        $("#botHand").hide();
+        $("#botHand").hide().attr("src", "");
         $("#pedra").show();
         $("#papel").show();
         $("#tesoura").show();
         $("#title").show();
         $("#presultado").hide();
+        
        });
         
     })
