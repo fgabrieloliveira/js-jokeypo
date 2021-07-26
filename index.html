@@ -6,7 +6,11 @@
 <link rel="stylesheet" href="index.css">
 </head>
 <body>
-   <div class="center"> <img id="botHand" src=""></div>
+    <div class="center"> 
+        <img id="botHandPedra" src="image/inpedra.png">
+        <img id="botHandPapel" src="image/inpapel.png">
+        <img id="botHandTesoura" src="image/intesoura.png">
+    </div>
    <br>
     <h1 id="title">Pedra, papel ou tesoura?</h1>
     <div class="center">
@@ -22,7 +26,9 @@
     
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#botHand").hide();
+        $("#botHandPedra").hide();
+        $("#botHandPapel").hide();
+        $("#botHandTesoura").hide();
         $("#refresh").hide();
         $("#pedra").click(function(){
             $("#papel").hide();
@@ -43,15 +49,15 @@
        function printResult(resultado){
             $("#title").hide();
             if (resultado[1]=="pedra"){
-                $('#botHand').attr("src", "image/inpedra.png");
+                $('#botHandPedra').show();
 
             }
             else if(resultado[1]=="papel"){
-                $('#botHand').attr("src", "image/inpapel.png");
+                $('#botHandPapel').show();
 
             }
             else if(resultado[1]=="tesoura"){
-                $('#botHand').attr("src", "image/intesoura.png");
+                $('#botHandTesoura').show();
             }
             
            if (resultado[0]=="você perdeu"){
@@ -79,6 +85,10 @@
         $("#tesoura").show();
         $("#title").show();
         $("#presultado").hide();
+        $("#botHandPedra").hide();
+        $("#botHandPapel").hide();
+        $("#botHandTesoura").hide();
+
         
        });
         
